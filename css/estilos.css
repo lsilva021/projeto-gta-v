@@ -1,0 +1,255 @@
+@charset "UTF-8";
+
+:root{
+    --corpadrao01: #282828;
+    --corpadrao02: #0b0b0b;
+    --corfonte01: #e8e8e8;
+    --corpadrao03: #387a26;
+    --corpadrao04: #00439c;
+    --corpadrao05: #fcaf17;  
+
+    --fontepadrao01: 'Chalet'
+}
+
+@font-face {
+    font-family: 'ChaletComprime';
+    src: url(../fontes/ChaletComprime.ttf);
+}
+
+body{
+    background-color: var(--corpadrao01);
+    color: white;
+}
+
+.cabecalho{
+    height: 80px;
+    background-color: var(--corpadrao02);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+    border-bottom: 1px solid var(--corpadrao01);
+}
+
+.cabecalho .logo{
+    gap: 15px;
+    display: flex;
+}
+
+.cabecalho .menu{
+    display: flex;
+    gap: 30px;
+}
+
+.cabecalho .menu li a{
+    padding: 30px;
+    color: var(--corfonte01);
+    font: normal bolder 15px 'Chalet';
+}
+
+.cabecalho .menu li a:hover{
+    border-bottom: 1px solid white;
+    cursor: pointer;
+}
+
+.home{
+    display: flex;
+    position: relative;
+    min-height: calc(100vh - 80px);
+}
+
+.home::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, .85), rgba(0,0, 0, .7) 35%, transparent 65%)
+}
+
+.home .imagem-fundo{
+    width: 100%;
+    object-fit: cover;
+}
+
+.home .informacoes{
+    position: absolute;
+    z-index: 1;
+    min-height: calc(100% - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    padding: 80px;
+    padding-left: 170px;
+    max-width: 780px;
+}
+
+.home .informacoes .lista-de-jogos{
+    display: flex;
+    max-width: 150px;
+    gap: 32px;
+}
+
+.home .informacoes .titulo{
+    font-family: 'ChaletComprime';
+    font-size: 55px;    
+}
+
+.home .informacoes .texto{
+    font-family: 'Chalet';
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.home .informacoes .btn-comprar{
+    border: 0.5px solid white;
+    border-radius: 4px;
+    font-size: 28px;
+    font-family: 'ChaletComprime';
+    width: 50%;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px 40px;
+    background-color: #ffffff1a;
+}
+
+.home .informacoes .btn-comprar:hover{
+    background-color: white;
+    color: black;
+    transition: 0.8s;
+}
+
+.btn-plataforma:hover{
+    cursor: pointer;
+    color: white;
+    width: 100%;
+}
+
+.compre-ja .capa-do-jogo{
+    width: 270px;
+}
+
+.compre-ja{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px;
+    align-items: center;
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.479);
+}
+
+.compre-ja .titulo{
+    font-family: 'ChaletComprime';
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.compre-ja .cartao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    width: 50%;
+    border-radius: 10px;
+    padding: 80px;
+    gap: 40px;
+}
+
+.cartao .informacoes{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.cartao .informacoes h3{
+    font-size: 52px;
+    font-weight: 700;
+    font-family: 'ChaletComprime';
+}
+
+.cartao .informacoes p{
+    color: var(--corfonte01);
+    font-family: 'Chalet';
+    line-height: 1.6;
+}
+
+.cartao .informacoes .plataformas{
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.compre-ja .cartao .btn-plataforma{
+    border: 0.5px solid white;
+    border-radius: 4px;
+    font-size: 28px;
+    font-family: 'ChaletComprime';
+    width: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px 40px;
+    background-color: #ffffff1a;
+}
+
+.compre-ja .btn-plataforma .plataformas{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: 0.3s;
+    display: none;
+    opacity: 0;
+}
+
+.compre-ja .btn-plataforma .plataformas.ativo{
+    display: flex;
+    opacity: 1;
+}
+
+.compre-ja .btn-plataforma .plataformas li{
+    padding: 20px;
+}
+
+.compre-ja .btn-plataforma .plataformas li:nth-child(1){
+    border: 1px solid var(--corpadrao04);
+}
+.compre-ja .btn-plataforma .plataformas li:nth-child(1):hover{
+    background-color: var(--corpadrao04);
+}
+.compre-ja .btn-plataforma .plataformas li:nth-child(2){
+    border: 1px solid var(--corpadrao03);
+}
+.compre-ja .btn-plataforma .plataformas li:nth-child(2):hover{
+    background-color: var(--corpadrao03);
+}
+.compre-ja .btn-plataforma .plataformas li:nth-child(3){
+    border: 1px solid var(--corpadrao04);
+}
+.compre-ja .btn-plataforma .plataformas li:nth-child(3):hover{
+    background-color: var(--corpadrao04);
+}
+.compre-ja .btn-plataforma .plataformas li:nth-child(4){
+    border: 1px solid var(--corpadrao03);
+}
+.compre-ja .btn-plataforma .plataformas li:nth-child(4):hover{
+    background-color: var(--corpadrao03);
+}
+.compre-ja .btn-plataforma .plataformas li:nth-child(5){
+    border: 1px solid var(--corpadrao05);
+}
+.compre-ja .btn-plataforma .plataformas li:nth-child(5):hover{
+    background-color: var(--corpadrao05);
+}
+
+footer{
+    background-color: black;
+    padding: 15px;
+    text-align: center;
+    font-family: 'Chalet';
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
